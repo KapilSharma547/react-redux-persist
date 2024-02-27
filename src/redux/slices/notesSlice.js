@@ -5,20 +5,20 @@ const initialState = {
   isLoggedIn: false,
 };
 
-const userSlice = createSlice({
-  name: "userSlice",
+const notesSlice = createSlice({
+  name: "notesSlice",
   initialState,
   reducers: {
-    signIn: (state, action) => {
+    NsignIn: (state, action) => {
       state.user = { ...state.user, ...action.payload };
       state.isLoggedIn = true;
     },
-    signOut: (state) => {
+    NsignOut: (state) => {
       state.user = {};
       state.isLoggedIn = false;
     },
   },
 });
 
-export const { signIn, signOut } = userSlice.actions;
-export default userSlice.reducer;
+export const { NsignIn, NsignOut } = notesSlice.actions;
+export default notesSlice.reducer;
